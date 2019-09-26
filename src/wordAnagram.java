@@ -47,7 +47,7 @@ public class wordAnagram {
 
     private static List<String> findWord(String s) {
         List<String> input = inputPermutation.permute(s);
-        System.out.println(input);
+        //System.out.println(input);
         List<String> result = new ArrayList<>();
         for (String str : input) {
             if(trieDictionary.search(str)) {
