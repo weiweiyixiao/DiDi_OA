@@ -9,6 +9,7 @@ public class WordAnagram {
     private final String USER_AGENT = "Mozilla/5.0";
     private Trie trieDictionary = new Trie();
     private static wordAnagram wordAna = new wordAnagram();
+    private static inputPermutation inputPerm = new inputPermutation();
 
     public static void main(String[] args) throws Exception {
         System.out.println("Testing 1 - Send Http GET request");
@@ -45,7 +46,7 @@ public class WordAnagram {
     }
 
     private List<String> findWord(String s) {
-        List<String> input = inputPermutation.permute(s);
+        List<String> input = inputPerm.permute(s);
         List<String> result = new ArrayList<>();
         for (String str : input) {
             if(trieDictionary.search(str)) {
