@@ -6,20 +6,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WordAnagram {
-    private static final String USER_AGENT = "Mozilla/5.0";
-    private static Trie trieDictionary = new Trie();
+    private final String USER_AGENT = "Mozilla/5.0";
+    private Trie trieDictionary = new Trie();
+    private static wordAnagram wordAna = new wordAnagram();
 
     public static void main(String[] args) throws Exception {
         System.out.println("Testing 1 - Send Http GET request");
-        buildTriefromDictionary();
+        wordAna.buildTriefromDictionary();
         String test1 = "nnogreen";
         String test2 = "grene";
-        System.out.println(findWord(test1));
-        System.out.println(findWord(test2));
+        System.out.println(wordAna.findWord(test1));
+        System.out.println(wordAna.findWord(test2));
     }
 
     // HTTP GET request
-    private static void buildTriefromDictionary() throws Exception {
+    private void buildTriefromDictionary() throws Exception {
 
         String url = "https://raw.githubusercontent.com/lad/words/master/words";
 
@@ -33,8 +34,6 @@ public class WordAnagram {
         con.setRequestProperty("User-Agent", USER_AGENT);
 
         int responseCode = con.getResponseCode();
-        System.out.println("\nSending 'GET' request to URL : " + url);
-        System.out.println("Response Code : " + responseCode);
 
         BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
         String inputLine;
@@ -45,9 +44,8 @@ public class WordAnagram {
         in.close();
     }
 
-    private static List<String> findWord(String s) {
+    private List<String> findWord(String s) {
         List<String> input = inputPermutation.permute(s);
-        //System.out.println(input);
         List<String> result = new ArrayList<>();
         for (String str : input) {
             if(trieDictionary.search(str)) {
