@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-class inputPermutation {
+class InputPermutation {
     public static List<String> permute(String s) {
         List<String> results = new ArrayList<>();
         char[] input = s.toCharArray();
