@@ -5,7 +5,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class wordAnagram {
+public class WordAnagram {
     private static final String USER_AGENT = "Mozilla/5.0";
     private static Trie trieDictionary = new Trie();
 
