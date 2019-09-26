@@ -10,7 +10,7 @@ public class Trie {
 
     private class TrieNode{
         TrieNode[] _children = new TrieNode[size];
-        boolean _isEnd = false;
+        boolean isEnd = false;
     }
 
     /** Inserts a word into the trie. */
@@ -23,7 +23,7 @@ public class Trie {
             }
             curr = curr._children[word.charAt(i) - OFFSET];
         }
-        curr._isEnd = true;
+        curr.isEnd = true;
     }
 
     /** Returns if the word is in the trie. */
@@ -35,7 +35,7 @@ public class Trie {
             }
             curr = curr._children[word.charAt(i) - OFFSET];
         }
-        return curr._isEnd;
+        return curr.isEnd;
     }
 
     /** Returns if there is any word in the trie that starts with the given prefix. */
