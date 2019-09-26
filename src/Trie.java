@@ -3,11 +3,6 @@ public class Trie {
     private static final char OFFSET = 'a';
     private TrieNode rootNode = new TrieNode();
 
-    /** Initialize your data structure here. */
-    public Trie() {
-
-    }
-
     private class TrieNode{
         TrieNode[] children = new TrieNode[size];
         boolean isEnd = false;
