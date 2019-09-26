@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 class InputPermutation {
-    public static List<String> permute(String s) {
+    public List<String> permute(String s) {
         List<String> results = new ArrayList<>();
         char[] input = s.toCharArray();
         Arrays.sort(input);
@@ -13,12 +13,10 @@ class InputPermutation {
     }
 
     private static void dfs(char[] input, boolean[] visited, StringBuilder sb, List<String> results) {
-        //base
         if (sb.length() == input.length) {
             results.add(sb.toString());
             return;
         }
-        //general
         for (int i = 0; i < input.length; i++) {
             if (visited[i]) {
                 continue;
