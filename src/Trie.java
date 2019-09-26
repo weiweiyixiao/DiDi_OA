@@ -32,16 +32,4 @@ public class Trie {
         }
         return curr.isEnd;
     }
-
-    /** Returns if there is any word in the trie that starts with the given prefix. */
-    public boolean startsWith(String prefix) {
-        TrieNode curr = rootNode;
-        for(int i = 0; i < prefix.length(); i++){
-            if(curr.children[prefix.charAt(i) - OFFSET] == null){
-                return false;
-            }
-            curr = curr.children[prefix.charAt(i) - OFFSET];
-        }
-        return true;
-    }
 }
